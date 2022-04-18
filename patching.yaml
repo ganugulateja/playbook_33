@@ -1,0 +1,14 @@
+---
+- hosts: all
+  remote_user: ansible
+  become_user: root
+  become: yes
+  tasks:
+   - name: Copy the Patch Script
+     copy: src:"ospatch_18042022i.sh" dest=/tmp/
+   - name: set permission
+     file: dest=/tmp/ospatch_18042022.sh group=root owner=root mode=0755
+   - name: Execute the script
+     shell: /bin/bash /tmp/ospatch_18042022.sh
+   - name: Reboot the server
+     command: /usr/bin/reboot

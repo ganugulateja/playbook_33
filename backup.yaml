@@ -1,0 +1,9 @@
+---
+- hosts: all
+  remote_user: ansible
+  become_user: root
+  become: yes
+  task:
+  - name: Copy from /var to /tmp
+    copy: src=/var/log/messages dest=/tmp/
+    

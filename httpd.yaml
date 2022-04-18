@@ -1,0 +1,8 @@
+---
+- hosts: all
+  remote_user: ansible
+  become_user: root
+  become: yes
+  tasks:
+   - name: Install httpd service
+     package: name=httpd service=latest
