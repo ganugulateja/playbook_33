@@ -5,4 +5,4 @@
   become: yes
   tasks:
    - name: Un-Install httpd service
-     package: name=httpd service=absent
+     package: name=httpd state=absent
